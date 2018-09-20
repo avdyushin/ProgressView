@@ -83,9 +83,9 @@ public class ProgressView<Layer: BaseProgressLayer>: UIView, ProgressableView, C
         animation.fromValue = oldValue
         animation.toValue = progress
         animation.duration = CFTimeInterval(fabsf(Float(oldValue - progress)))
-        animation.fillMode = kCAFillModeForwards
+        animation.fillMode = CAMediaTimingFillMode.forwards
         animation.isRemovedOnCompletion = true
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animation.delegate = self
         progressLayer.add(animation, forKey: BaseProgressLayer.Keys.progress.rawValue)
         debugPrint(oldValue, progress)
